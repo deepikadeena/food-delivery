@@ -1,0 +1,19 @@
+# Environment files
+.env
+**/.env
+
+# Node modules
+node_modules/
+**/node_modules/
+
+# Mac system files
+.DS_Store
+**/.DS_Store
+# Downloaded website files
+frontend/src/assets/rating_files/
+frontend/src/assets/cross_icon_files/
+frontend/src/assets/Eternal_files/
+admin/src/assets/add_icon.html
+admin/src/assets/add_icon_files/
+frontend/src/assets/add_icon_white.html
+backend/.env
