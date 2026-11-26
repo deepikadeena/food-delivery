@@ -26,7 +26,9 @@ const addFood = async (req, res) => {
 
             streamifier.createReadStream(req.file.buffer).pipe(stream);
         });
-
+         
+        console.log("CLOUDINARY RESULT:", uploadResult);
+        
         const food = new foodModel({
             name: req.body.name,
             description: req.body.description,
