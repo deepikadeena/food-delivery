@@ -6,6 +6,8 @@ import streamifier from "streamifier";
 // Add food item
 const addFood = async (req, res) => {
     try {
+        console.log("FILE:", req.file);
+        console.log("BODY:", req.body);
         if (!req.file) {
             return res.status(400).json({
                 success: false,
