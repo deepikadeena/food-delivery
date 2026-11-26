@@ -1,0 +1,5 @@
+grep -q '^MONGODB_URI=' .env && echo "MongoDB URI found" |import mongoose from "mongoose";
+
+export const connectDB = async ()=> {
+    await mongoose.connect('mongodb://localhost:27017/test').then(()=>console.log("DB Connected"));
+}
