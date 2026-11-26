@@ -58,10 +58,19 @@ const addToCart = async (itemId)=>{
 
    }
 
-    const fetchFoodList = async () =>{
-        const response = await axios.get(url+"/api/food/list");
-        setFoodList(response.data.data)
+    
+const fetchFoodList = async () => {
+    try {
+        const response = await axios.get(url + "/api/food/list");
+
+        console.log("FOOD LIST:", response.data.data);
+
+        setFoodList(response.data.data);
+    } catch (error) {
+        console.log("FOOD LIST ERROR:", error);
     }
+};
+
     const loadCartData = async (token) =>{
         const response = await axios.post(url+"/api/cart/get",{},{headers:{token}});
         setCartItems(response.data.cartData);
