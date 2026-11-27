@@ -16,7 +16,7 @@ const About = () => {
          <img className='del' src={assets.back2} alt="" />
          <p className='paras'>At its core, SpicySpot is driven by a singular <br /> mission: Better food for more people. Through <br /> innovative technology, deep local insights, and <br /> a relentless focus on customer experience, <br /> SpicySpot is reshaping the food landscape one <br /> meal at a time.</p>
       </div>
-      <div>
+      <div className="about-stats">
         <h1 className='fue'>Fueling connections through every order</h1>
          <Card className='ca'>
       <Card.Img className='cas' variant="top" src={assets.phone}/>

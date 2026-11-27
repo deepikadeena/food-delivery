@@ -1,94 +1,225 @@
 
-.img{
-    margin-top:0px;
+.img {
     width: 100%;
-    height:600px;
+    height: 600px;
+    object-fit: cover;
+    display: block;
 }
 
-.sp{
-    margin-top:-350px;
-    margin-left:100px;
+.sp {
+    margin-top: -350px;
+    margin-left: 7%;
     font-size: 50px;
     color: aliceblue;
 }
-.be{
-    margin-left: 100px;
+
+.be {
+    margin-left: 7%;
     margin-top: 20px;
     font-size: 50px;
     color: aliceblue;
 }
-.para{
-    margin-top: 50px;
-    display: inline-block;
-    font-size: 20px;
-}
-.del{
-    width: 500px;
-    margin-left:650px;
-    margin-top:-200px;
-    display: inline-block;
-    height: 400px;
-    
-}
-.paras{
-    font-size: 20px;
-    margin-top:-200px;
-}
-.fue{
-    font-size: 80px;
-    margin-top:50px;
 
+.head {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: 40px;
+    margin: 0 auto;
+    padding: 0 5%;
 }
-.ca{
-    width: 13rem;
-    border: solid rgb(234, 227, 227);
-    height:300px;
-    background-color:white;
-    border-radius:5px;
-    margin-top: 50px;
-    transform: scale(1.2);
-}
-.cas{
-    width:100px;
-}
-.mil{
-    font-size: 30px;
-    margin-left:30px;
-    margin-top:20px;
-}
-.caa{
-    width: 13rem;
-    border: solid rgb(234, 227, 227);
-    height:300px;
-    background-color:white;
-    border-radius:5px;
-    margin-top: -300px;
-    transform: scale(1.2);
-    margin-left: 400px;
-}
-.caaa{
-    width: 13rem;
-    border: solid rgb(234, 227, 227);
-    height:300px;
-    background-color:white;
-    border-radius:5px;
-    margin-top: -300px;
-    transform: scale(1.2);
-    margin-left: 800px;
-}
-.cass{
-    width: 80px;
-    margin-top:20px;
-    margin-left:30px;
-}
-.casa{
-    width: 80px;
-    margin-left: 40px;
-    margin-top: 10px;
-}
-.about{
-    margin-top:250px;
-    margin-left: 500px;
+
+.about {
+    grid-column: 1 / -1;
+    margin-top: 220px;
     font-size: 40px;
     font-weight: 500;
+    text-align: center;
+}
+
+.para {
+    margin-top: 30px;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.del {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+}
+
+.paras {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-top: 0;
+}
+
+.fue {
+    font-size: 50px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.ca,
+.caa,
+.caaa {
+    width: 13rem;
+    border: 1px solid rgb(234, 227, 227);
+    height: 300px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 50px auto 20px;
+    transform: scale(1.1);
+}
+
+.cas {
+    width: 100px;
+}
+
+.mil {
+    font-size: 22px;
+    margin: 20px 10px;
+    text-align: center;
+}
+
+.cass {
+    width: 80px;
+    margin: 20px auto 0;
+    display: block;
+}
+
+.casa {
+    width: 80px;
+    margin: 10px auto 0;
+    display: block;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .img {
+        height: 450px;
+    }
+
+    .sp,
+    .be {
+        font-size: 38px;
+    }
+
+    .about {
+        margin-top: 220px;
+    }
+
+    .para,
+    .paras {
+        font-size: 16px;
+    }
+
+    .fue {
+        font-size: 38px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .img {
+        height: 300px;
+    }
+
+    .sp {
+        margin-top: -180px;
+        margin-left: 5%;
+        font-size: 30px;
+    }
+
+    .be {
+        margin-left: 5%;
+        margin-top: 10px;
+        font-size: 22px;
+    }
+
+    .head {
+        grid-template-columns: 1fr;
+        padding: 0 5%;
+        gap: 15px;
+    }
+
+    .about {
+         margin-top: 200px !important;
+        font-size: 30px;
+    }
+
+    .para,
+    .paras {
+        font-size: 15px;
+        margin-top: 10px;
+        line-height: 1.6;
+    }
+
+    .del {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        margin: 10px auto;
+    }
+
+    .fue {
+        font-size: 27px;
+        padding: 0 10px;
+        margin-top: 35px;
+    }
+
+    .ca,
+    .caa,
+    .caaa {
+        margin: 25px auto;
+        transform: none;
+    }
+
+    .mil {
+        font-size: 20px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 400px) {
+    .sp {
+        font-size: 25px;
+    }
+
+    .be {
+        font-size: 18px;
+    }
+
+    .about {
+        font-size: 26px;
+    }
+
+    .fue {
+        font-size: 23px;
+    }
+}
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 20px 5%;
+}
+
+.about-stats .fue {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 900px) {
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .about-stats {
+        grid-template-columns: 1fr;
+    }
 }

@@ -1,61 +1,118 @@
 
-.header{
-    height:38vw;
-    width:2000px;
-    margin:5px auto;
-    background: url("/back.jpeg") no-repeat ;
-    background-size:1200px;
+.header {
+    height: 38vw;
+    width: 100%;
+    max-width: 100%;
+    margin: 30px auto 5px;
+    background: url("/back.jpeg") no-repeat center;
+    background-size: cover;
     position: relative;
-    margin-left:-20px;
-    border-radius:10px;
-    margin-top:30px;
+    border-radius: 10px;
+    overflow: hidden;
 }
-.header-contents{
+
+.header-contents {
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap:1.5vw;
-    max-width: 25%;
-    left: 6vw;
-    margin-top:70px;
+    gap: 1.5vw;
+    max-width: 45%;
+    left: 6%;
+    top: 10%;
     animation: fadeIn 3s;
-    
-    
 }
-.header-contents h2{
+
+.header-contents h2 {
     font-weight: 500;
     color: white;
-    font-size: max(3.0vw,10px);
+    font-size: max(3vw, 20px);
 }
-.header-contents p{
+
+.header-contents p {
     font-size: 1.2vw;
+    color: white;
+    line-height: 1.5;
 }
-.header-contents button{
-    border:none;
-    font-weight:500;
-    padding:1vw 2.3vw;
+
+.header-contents button {
+    border: none;
+    font-weight: 500;
+    padding: 1vw 2.3vw;
     background-color: white;
-    font-size: max(1vw,13px);
-    border-radius:50px;
+    font-size: max(1vw, 13px);
+    border-radius: 50px;
+    cursor: pointer;
 }
-@media (max-width:1050) {
-    .header{
-        height:38vw;
+
+/* Tablet */
+@media (max-width: 1050px) {
+    .header {
+        height: 42vw;
     }
-    .header-contents{
-        max-width: 45%;
+
+    .header-contents {
+        max-width: 50%;
+    }
+
+    .header-contents h2 {
+        font-size: 4vw;
+    }
+
+    .header-contents p {
+        font-size: 1.5vw;
     }
 }
-@media (max-width:750) {
-    .header-contents{
-        max-width:55%;
-        
+
+/* Mobile */
+@media (max-width: 750px) {
+    .header {
+        height: 55vw;
+        background-position: center;
     }
-    .header-contents p{
-        display: none;
+
+    .header-contents {
+        max-width: 65%;
+        left: 5%;
+        top: 8%;
+        gap: 2vw;
     }
-    .header-contents button{
+
+    .header-contents h2 {
+        font-size: 5vw;
+    }
+
+    .header-contents p {
+        font-size: 2vw;
+    }
+
+    .header-contents button {
         padding: 2vw 4vw;
+        font-size: 3vw;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .header {
+        height: 65vw;
+    }
+
+    .header-contents {
+        max-width: 75%;
+        top: 8%;
+    }
+
+    .header-contents h2 {
+        font-size: 6vw;
+    }
+
+    .header-contents p {
+        font-size: 2.5vw;
+    }
+
+    .header-contents button {
+        padding: 2.5vw 5vw;
+        font-size: 3.5vw;
     }
 }

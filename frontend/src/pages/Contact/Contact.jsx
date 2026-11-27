@@ -18,7 +18,14 @@ const Contact = () => {
         },
         iconTheme:{primary:'#f59e0b',secondary:'#fff'},
       })
-      setFormData({name:'',phone:'',email:'',dish:'',query:''})
+      setFormData({
+  name:'',
+  phone:'',
+  email:'',
+  address:'',
+  dish:'',
+  query:''
+})
      }
      const handleChange = (e)=> setFormData({...formData,[e.target.name]: e.target.value});
 
