@@ -1,43 +1,56 @@
-import React, { useEffect } from 'react'
+
+import React, { useEffect, useContext } from 'react'
 import './Verify.css'
-import { Navigate, useNavigate, useSearchParams } from 'react-router-dom'
-import { useContext } from 'react';
-import { StoreContext } from '../../context/StoreContext';
-import axios from 'axios';
+import { useNavigate, useSearchParams } from 'react-router-dom'
+import { StoreContext } from '../../context/StoreContext'
+import axios from 'axios'
 
 const Verify = () => {
 
-   const [searchParams,setSearchParams]=useSearchParams();
-   const success = searchParams.get("success")
-   const orderId = searchParams.get("orderId")
-   const  {url} = useContext(StoreContext);
-   const navigate = useNavigate();
+    const [searchParams] = useSearchParams()
 
+    const success = searchParams.get("success")
+    const orderId = searchParams.get("orderId")
 
+    const { url } = useContext(StoreContext)
+    const navigate = useNavigate()
 
-   const  verifyPayment = async () => {
+    useEffect(() => {
 
-    const response = await axios.post(url+"/api/order/verify",{success,orderId});
-    if(response.data.success){
-        navigate("/myorders");
-    }
-    else{
-        navigate("/")
-    }
-   }
-   useEffect(()=>{
-    verifyPayment();
+        const verifyPayment = async () => {
+            try {
 
-   },[])
-   
+                const response = await axios.post(
+                    url + "/api/order/verify",
+                    { success, orderId }
+                )
 
+                if (response.data.success) {
+                    navigate("/myorders")
+                } else {
+                    navigate("/")
+                }
 
-  return (
-    <div className='verify'>
-        <div className='spinner'></div>
-      
-    </div>
-  )
+            } catch (error) {
+                console.log("Payment verification error:", error)
+                navigate("/")
+            }
+        }
+
+        if (success && orderId) {
+            verifyPayment()
+        } else {
+            navigate("/")
+        }
+
+    }, [success, orderId, url, navigate])
+
+    return (
+        <div className='verify'>
+            <div className='spinner'></div>
+            <p>Verifying your payment...</p>
+        </div>
+    )
 }
 
-export default Verify;
+export default Verify
